@@ -1,0 +1,283 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BÀI TẬP 30 NGÀY BYE MỠ BỤNG</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --pink:#f9cddb;
+      --pink-2:#ffd9e7;
+      --text:#3a2b2f;
+      --accent:#ff5a8b;
+      --card:#fff7fa;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Quicksand",system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue","Noto Sans",sans-serif;
+      color:var(--text);
+      background:linear-gradient(180deg,var(--pink-2),#fff);
+    }
+    header{
+      padding:28px 16px 8px;
+      text-align:center;
+    }
+    .title{
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight:700;
+      font-style: italic;
+      line-height:1.15;
+      margin:0 0 8px;
+      color:#a24066;
+      text-shadow: 0 2px 0 rgba(255,255,255,.8);
+    }
+    .sub{
+      font-size:clamp(14px,2.8vw,18px);
+      opacity:.9;
+    }
+    .container{
+      max-width:980px;
+      margin:0 auto;
+      padding:16px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid #f4c9da;
+      border-radius:24px;
+      padding:18px;
+      box-shadow: 0 8px 30px rgba(255, 138, 171, .18);
+    }
+    .hero{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:16px;
+      align-items:center;
+      justify-items:center;
+    }
+    .hero img{
+      width:100%;
+      max-width:560px;
+      border-radius:18px;
+      background:white;
+    }
+    .btn{
+      appearance:none;
+      border:none;
+      padding:14px 22px;
+      border-radius:999px;
+      background:linear-gradient(180deg,#ff8fb0,#ff5a8b);
+      color:white;
+      font-weight:700;
+      letter-spacing:.2px;
+      cursor:pointer;
+      box-shadow: 0 6px 18px rgba(255,90,139,.35);
+      transition: transform .06s ease, box-shadow .2s ease;
+    }
+    .btn:active{ transform: translateY(1px); box-shadow:0 3px 12px rgba(255,90,139,.25); }
+    .principle{
+      margin-top:16px;
+      background:#fff;
+      border-radius:16px;
+      padding:14px 16px;
+      border:1px dashed #f3a8bf;
+      font-size:clamp(14px,2.8vw,18px);
+    }
+    .principle b{ color:#c73768 }
+    /* Viewer overlay */
+    .overlay{
+      position:fixed;
+      inset:0;
+      background:rgba(255, 179, 199, .3);
+      backdrop-filter: blur(6px);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      z-index:99;
+    }
+    .viewer{
+      width:min(1100px,96vw);
+      background:#fff;
+      border-radius:22px;
+      box-shadow:0 12px 40px rgba(146, 58, 91, .25);
+      overflow:hidden;
+      display:grid;
+      grid-template-rows:auto 1fr auto;
+    }
+    .viewer header{
+      padding:14px 18px;
+      text-align:left;
+      background:linear-gradient(180deg,#ffe9f1,#fff);
+      border-bottom:1px solid #f6d1de;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .viewer h2{
+      font-size:clamp(18px,3.5vw,22px);
+      margin:0;
+    }
+    .close{
+      background:#ffe5ef;
+      color:#a24066;
+      border:1px solid #f3b7cb;
+      padding:8px 12px;
+      border-radius:10px;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .stage{
+      display:grid;
+      place-items:center;
+      padding:14px;
+      background:#fff;
+    }
+    .stage img{
+      width:100%;
+      max-width:720px;
+      object-fit:contain;
+      border-radius:14px;
+      background:#fff;
+    }
+    .caption{
+      text-align:center;
+      padding:8px 14px 0;
+      color:#6a3d4f;
+      font-weight:600;
+    }
+    .controls{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:12px 14px;
+      border-top:1px solid #f6d1de;
+      background:linear-gradient(180deg,#fff,#fff6fa);
+    }
+    .pill{
+      background:#ffe5ef;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid #f3b7cb;
+      font-weight:700;
+    }
+    .nav{
+      display:flex; gap:10px;
+    }
+    .nav button{
+      background:#ff6a9a;
+      border:none; color:#fff;
+      padding:10px 16px; border-radius:12px;
+      font-weight:700; cursor:pointer;
+      box-shadow:0 6px 16px rgba(255,90,139,.28);
+    }
+    .nav button.secondary{ background:#f1b1c7; color:#5a2c3d }
+    .footer-note{
+      text-align:center; font-size:13px; opacity:.7; margin-top:12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="title">BÀI TẬP 30 NGÀY BYE MỠ BỤNG</h1>
+    <div class="sub">Giao diện hồng pastel • Hướng dẫn trực quan theo thứ tự 1 → 9</div>
+  </header>
+
+  <main class="container">
+    <div class="card hero">
+      <img src="map.png.png" alt="Sơ đồ tổng điểm bấm vùng bụng (1–9)" />
+      <button id="open" class="btn">Hướng dẫn tập</button>
+      <div class="principle">
+        <b>Nguyên lý tập:</b><br/>
+        <b>Số lẻ</b>: Quay <b>THUẬN</b> chiều kim đồng hồ, bội số của <b>9</b>.<br/>
+        <b>Số chẵn</b>: Quay <b>NGƯỢC</b> chiều kim đồng hồ, bội số của <b>6</b>.
+      </div>
+    </div>
+    <div class="footer-note">Mẹo: Có thể dùng phím mũi tên &larr; &rarr; để lùi/tiến.</div>
+  </main>
+
+  <!-- Overlay Viewer -->
+  <section id="overlay" class="overlay" aria-hidden="true">
+    <div class="viewer" role="dialog" aria-modal="true" aria-labelledby="viewerTitle">
+      <header>
+        <h2 id="viewerTitle">Hướng dẫn theo thứ tự 1 → 9</h2>
+        <button id="close" class="close" aria-label="Đóng (Esc)">Đóng ✕</button>
+      </header>
+      <div class="stage">
+        <img id="slideImg" src="1.png" alt="Vị trí 1" />
+        <div id="caption" class="caption"></div>
+      </div>
+      <div class="controls">
+        <span id="counter" class="pill">Ảnh 1/9</span>
+        <div class="nav">
+          <button id="prev" class="secondary">◀ Back</button>
+          <button id="next">Tiếp ▶</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Data: 9 hình + ghi chú
+    const slides = [
+      { src:'1.png', alt:'Vị trí 1', note:'9 lần THUẬN chiều kim đồng hồ' },
+      { src:'2.png', alt:'Vị trí 2', note:'12 lần NGƯỢC chiều kim đồng hồ' },
+      { src:'3.png', alt:'Vị trí 3', note:'27 lần THUẬN chiều kim đồng hồ' },
+      { src:'4.png', alt:'Vị trí 4', note:'24 lần NGƯỢC chiều kim đồng hồ' },
+      { src:'5.png', alt:'Vị trí 5', note:'45 lần THUẬN chiều kim đồng hồ' },
+      { src:'6.png', alt:'Vị trí 6', note:'36 lần NGƯỢC chiều kim đồng hồ' },
+      { src:'7.png', alt:'Vị trí 7', note:'63 lần THUẬN chiều kim đồng hồ' },
+      { src:'8.png', alt:'Vị trí 8', note:'48 lần NGƯỢC chiều kim đồng hồ' },
+      { src:'9.png', alt:'Vị trí 9', note:'81 lần THUẬN chiều kim đồng hồ' },
+    ];
+
+    const overlay = document.getElementById('overlay');
+    const openBtn = document.getElementById('open');
+    const closeBtn = document.getElementById('close');
+    const nextBtn = document.getElementById('next');
+    const prevBtn = document.getElementById('prev');
+    const imgEl   = document.getElementById('slideImg');
+    const capEl   = document.getElementById('caption');
+    const counter = document.getElementById('counter');
+
+    let idx = 0;
+
+    function render(){
+      const s = slides[idx];
+      imgEl.src = s.src;
+      imgEl.alt = s.alt;
+      capEl.textContent = `Ghi chú: ${s.note}`;
+      counter.textContent = `Ảnh ${idx+1}/9`;
+    }
+
+    function openOverlay(){
+      overlay.style.display = 'flex';
+      overlay.setAttribute('aria-hidden','false');
+      idx = 0;
+      render();
+    }
+    function closeOverlay(){
+      overlay.style.display = 'none';
+      overlay.setAttribute('aria-hidden','true');
+    }
+    function next(){ idx = (idx + 1) % slides.length; render(); }
+    function prev(){ idx = (idx - 1 + slides.length) % slides.length; render(); }
+
+    openBtn.addEventListener('click', openOverlay);
+    closeBtn.addEventListener('click', closeOverlay);
+    nextBtn.addEventListener('click', next);
+    prevBtn.addEventListener('click', prev);
+
+    // Keyboard support
+    document.addEventListener('keydown', (e) => {
+      if(overlay.getAttribute('aria-hidden') === 'true') return;
+      if(e.key === 'ArrowRight') next();
+      if(e.key === 'ArrowLeft')  prev();
+      if(e.key === 'Escape')     closeOverlay();
+    });
+  </script>
+</body>
+</html>
